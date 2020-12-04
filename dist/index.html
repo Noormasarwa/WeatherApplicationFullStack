@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>
+        Whethear App 
+    </title>
+</head>
+
+<body>
+
+    <script id="weather-template" type="text/x-handlebars-template">
+        {{#each cities}}
+        <div class="card">
+            <div class="city">{{name}}</div>
+            <div class="temperature">{{temperature}}<span>&#8451;</span></div>
+            <div class="condition">{{condition}}</div>
+            <img src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png">
+        </div>
+        {{/each}}
+    </script>
+
+    <div id="container">
+        <div id="inputSearchBar">
+            <input type="text" id ="textLine">
+            <i class="fas fa-search" id="searchBtn"></i>
+        </div>
+        <div id="weatherContainer"></div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="Model.js"></script>
+    <script src="View.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
